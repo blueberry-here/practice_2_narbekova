@@ -1,27 +1,23 @@
-[project]
+[tool.poetry]
+package-mode = false
 name = "poetry-project"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Anya",email = "kostenko1anna@gmail.com"}
-]
+authors = ["Anya <kostenko1anna@gmail.com>"]
 readme = "README.md"
-requires-python = "^3.12"
-dependencies = [
-    "requests (>=2.34.2,<3.0.0)",
-    "matplotlib (>=3.11.2,<4.0.0)",
-    "pandas (>=3.1.0,<4.0.0)"
-]
 
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.34.2"
+matplotlib = "^3.11.2"
+pandas = "^3.1.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^9.2.0"
 
-
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.17.3"
 
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
