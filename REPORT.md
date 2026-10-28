@@ -34,7 +34,14 @@
 - **Результат (путь к интерпретатору):** `C:\Users\Exponenta\repo\practice_2_narbekova\poetry_project\.venv\Scripts\python.exe` (используется Python 3.12.10, окружение создано локально внутри проекта).
 
 ### 5. Основные зависимости и группы
-- **Транзитивные зависимости:** (примеры)
+- **Основные зависимости:** `requests`, `matplotlib`, `pandas`.
+- **Группа test:** `pytest`.
+- **Группа dev:** `ruff`.
+- **Примеры транзитивных зависимостей (из `poetry show --tree`):**
+  - Для `requests`: `urllib3` (или `certifi`, `idna`)
+  - Для `matplotlib`: `pillow` (или `contourpy`, `numpy`)
+  - Для `pandas`: `tzdata` (или `numpy`, `python-dateutil`)
+- **Проверка групп:** Зависимости разделены в `pyproject.toml` по секциям `[tool.poetry.dependencies]`, `[tool.poetry.group.test.dependencies]` и `[tool.poetry.group.dev.dependencies]`. Одинаковые библиотеки не добавлены в несколько групп вручную.
 
 ### 8. Работа с группами
 - **Вариант 1 (только основные):** ...
